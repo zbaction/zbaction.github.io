@@ -1,0 +1,254 @@
+/* 认证模态框样式 */
+.auth-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(3px);
+    animation: modalFadeIn 0.3s ease-out forwards;
+}
+
+.auth-modal {
+    background-color: white;
+    width: 420px;
+    max-width: 90%;
+    border-radius: 12px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding: 2rem;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.auth-modal-header {
+    margin-bottom: 1.5rem;
+}
+
+.auth-modal-header h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1.2rem;
+    text-align: center;
+    font-weight: 600;
+}
+
+.auth-tabs {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1.5rem;
+}
+
+.auth-tab {
+    border: none;
+    background: transparent;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #666;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+    margin: 0 0.5rem;
+}
+
+.auth-tab:hover {
+    color: #4285f4;
+}
+
+.auth-tab.active {
+    color: #4285f4;
+}
+
+.auth-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: #4285f4;
+    border-radius: 3px 3px 0 0;
+}
+
+.auth-modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #999;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.3s;
+}
+
+.auth-modal-close:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+.auth-form-container {
+    padding: 0.5rem 0;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.form-group input {
+    padding: 0.9rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s;
+    background-color: #f9f9f9;
+}
+
+.form-group input:focus {
+    border-color: #4285f4;
+    box-shadow: 0 0 0 3px rgba(66, 133, 244, 0.15);
+    outline: none;
+    background-color: #fff;
+}
+
+.auth-submit-button {
+    background-color: #4285f4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.9rem;
+    font-size: 1.05rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 0.5rem;
+    box-shadow: 0 2px 10px rgba(66, 133, 244, 0.2);
+}
+
+.auth-submit-button:hover {
+    background-color: #3b78e7;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(66, 133, 244, 0.3);
+}
+
+.auth-submit-button:disabled {
+    background-color: #a5c6ff;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.auth-error-message {
+    background-color: #fff2f0;
+    border: 1px solid #ffccc7;
+    color: #f5222d;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.auth-form-footer {
+    text-align: center;
+    color: #666;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+}
+
+.auth-text-button {
+    border: none;
+    background: none;
+    color: #4285f4;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.auth-text-button:hover {
+    color: #3b78e7;
+    text-decoration: underline;
+}
+
+.auth-text-button:disabled {
+    color: #a5c6ff;
+    cursor: not-allowed;
+    text-decoration: none;
+}
+
+/* 动画 */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (max-width: 576px) {
+    .auth-modal {
+        padding: 1.5rem;
+    }
+
+    .auth-form-container {
+        padding: 0;
+    }
+
+    .auth-form-title {
+        font-size: 1.5rem;
+    }
+
+    .auth-tab {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input {
+        padding: 0.8rem;
+    }
+
+    .auth-submit-button {
+        padding: 0.8rem;
+        font-size: 1rem;
+    }
+}

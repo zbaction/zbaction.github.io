@@ -1,0 +1,165 @@
+.user-profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-trigger {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px 12px;
+    border-radius: 20px;
+    transition: background-color 0.2s;
+}
+
+.profile-trigger:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.avatar-circle {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #4285f4;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.username {
+    margin-right: 6px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.dropdown-arrow {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #666;
+    margin-left: 4px;
+    transition: transform 0.2s;
+}
+
+.dropdown-arrow.open {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    min-width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    overflow: hidden;
+    margin-top: 8px;
+    animation: slideDown 0.3s ease-out;
+}
+
+.dropdown-header {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name {
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.user-email {
+    font-size: 13px;
+    color: #666;
+}
+
+.dropdown-content {
+    padding: 8px 0;
+}
+
+.dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.dropdown-item:hover {
+    background-color: #f5f5f5;
+}
+
+.dropdown-item i {
+    margin-right: 10px;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+    color: #666;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background-color: #f0f0f0;
+    margin: 8px 0;
+}
+
+.logout-button {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #e53935;
+}
+
+.logout-button i {
+    color: #e53935;
+}
+
+/* 图标样式 */
+.icon-profile:before {
+    content: "👤";
+}
+
+.icon-favorite:before {
+    content: "❤️";
+}
+
+.icon-book:before {
+    content: "📚";
+}
+
+.icon-settings:before {
+    content: "⚙️";
+}
+
+.icon-logout:before {
+    content: "🚪";
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

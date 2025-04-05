@@ -1,0 +1,87 @@
+/* 主题变量 */
+:root {
+  /* 默认浅色主题变量 */
+  --backgroundColor: #ffffff;
+  --textColor: #333333;
+  --primaryColor: #4285f4;
+  --secondaryColor: #f0f0f0;
+  --borderColor: #e0e0e0;
+  --cardBackground: #ffffff;
+  --headerBackground: #ffffff;
+  --footerBackground: #f8f9fa;
+}
+
+/* 全局样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primaryColor);
+}
+
+button {
+  cursor: pointer;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  max-width: 100%;
+  width: 100%;
+}
+
+/* 深色主题样式 */
+body.dark {
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
+}
+
+/* 加载状态样式 */
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 300px;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primaryColor);
+  animation: spin 1s linear infinite;
+  margin-bottom: 15px;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.content {
+  flex: 1;
+  padding: 20px 0;
+  max-width: 100%;
+  width: 100%;
+}

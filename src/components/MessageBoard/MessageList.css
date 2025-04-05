@@ -1,0 +1,155 @@
+.message-list {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.message-list.empty {
+    padding: 3rem;
+    text-align: center;
+}
+
+.empty-message {
+    color: #999;
+    font-size: 1.1rem;
+}
+
+.message-list-title {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #1890ff;
+    padding-left: 10px;
+}
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.message-item {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 1.5rem;
+}
+
+.message-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.message-author {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.author-email {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.message-date {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.message-content {
+    margin-bottom: 1rem;
+}
+
+.message-content p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.message-reply {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-top: 0.8rem;
+}
+
+.reply-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.reply-title {
+    font-weight: 600;
+    color: #1890ff;
+}
+
+.reply-date {
+    color: #999;
+    font-size: 0.9rem;
+}
+
+.reply-content {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.message-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.pagination-btn {
+    background-color: #f0f0f0;
+    border: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.pagination-btn:hover {
+    background-color: #e0e0e0;
+}
+
+.pagination-info {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .message-list {
+        padding: 1.5rem;
+    }
+
+    .message-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .message-author {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.3rem;
+    }
+
+    .reply-header {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+}
